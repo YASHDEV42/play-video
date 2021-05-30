@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video hover</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>the video will play when i hover it</h1>
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <img class="my-icon" src="/icon/play-button-arrowhead.png" alt="">
+            <video src="/videos/Ink - 67358.mp4" class="my-vid" type="video/mp4" loop muted></video>
+        </div>
+        <div class="box">
+            <img src="/icon/play-button-arrowhead.png" alt="">
+            <video src="/videos/Jellyfish - 10480.mp4" class="my-vid" type="video/mp4" loop muted></video>
+            
+        </div>
+    </div>
+    
+    <script>
+        const myIcon = document.querySelectorAll(".my-icon")
+        const myVid = document.querySelectorAll(".my-vid");
+        myVid.forEach(video => {
+            video.addEventListener("mouseenter", 
+            function(e){
+                video.play()
+            }
+            )
+            video.addEventListener("mouseout", 
+            function(e){
+                video.pause()
+            }
+            )
+        })
+    </script>
+</body>
+</html>
